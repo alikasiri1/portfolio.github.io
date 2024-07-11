@@ -46,14 +46,14 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
-	<link
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	<style>
+	<!-- <style>
 		#fh5co-aside {
 		-webkit-text-size-adjust: 100%;
 		-webkit-tap-highlight-color: transparent;
@@ -132,6 +132,39 @@
     border-radius: 4px;
 }
 
+	</style> -->
+	<style>
+		
+		.navbar-default {
+			border-color: transparent;
+			background-color: #222;
+		}
+		.navbar-default .navbar-brand {
+			font-family: "Kaushan Script", cursive;
+			color: white;
+		}
+		.navbar-default .navbar-brand:hover,
+		.navbar-default .navbar-brand:focus,
+		.navbar-default .navbar-brand:active,
+		.navbar-default .navbar-brand.active {
+			color: rgb(34, 126, 169);
+		}
+		.navbar-default .navbar-toggle:hover,
+		.navbar-default .navbar-toggle:focus {
+			background-color: white;
+		}	
+		.navbar-default .nav li a {
+			text-transform: uppercase;
+			
+			font-weight: 400;
+			letter-spacing: 1px;
+			color: #fff;
+		}
+		.navbar-default .nav li a:hover,
+.navbar-default .nav li a:focus {
+    outline: 0;
+    color: #00ADB5;
+}
 	</style>
 </head>
 	<body>
@@ -197,26 +230,66 @@
 		</div>
 
 	</aside> -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Ali Kasiri</a>
+            </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#fh5co-about">About</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#fh5co-resume">Resume</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#fh5co-features">Services</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#fh5co-work">Projects</a>
+                    </li>
+                    <li class="">
+                        <a class="page-scroll" href="#fh5co-consult">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 	<div id="page">	
 		
 	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style=" background: rgba(0, 173, 181,.9);" data-stellar-background-ratio="0.5">
 		
 		<div class="overlay"></div>
 		<div class="container">
-			<nav class="navbar">
+			<!-- <nav class="navbar">
 				<div class="container">
 					<a href="#" class="navbar-brand">Ali Kasiri</a>
 					<ul class="navbar-nav">
 						<li class="nav-item"><a href="#fh5co-about" class="nav-link">About</a></li>
 						<li class="nav-item"><a href="#fh5co-resume" class="nav-link">Resume</a></li>
 						<li class="nav-item"><a href="#fh5co-features" class="nav-link">Services</a></li>
-						<!-- <li class="nav-item"><a href="#fh5co-skills" class="nav-link">Skills</a></li> -->
 						<li class="nav-item"><a href="#fh5co-work" class="nav-link">Projects</a></li>
 						<li class="nav-item"><a href="#fh5co-consult" class="nav-link">Contact</a></li>
 					</ul>
 				</div>
-			</nav>
+			</nav> -->
+
+
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t js-fullheight">
@@ -252,7 +325,7 @@
 						<li><span class="first-block">Full Name:</span><span class="second-block">Ali Kasiri</span></li>
 						<li><span class="first-block">Phone:</span><span class="second-block">+98 09914483136 </span></li>
 						<li><span class="first-block">Email:</span><span class="second-block">akgh1382@gmail.com</span></li>
-						<li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li>
+						<li><span class="first-block">Website:</span><span class="second-block"><a href="https://alikasiri1.github.io/portfolio.github.io">My web Page</a></span></li>
 						<!-- <li><span class="first-block">Address:</span><span class="second-block">198 West 21th Street, Suite 721 New York NY 10016</span></li> -->
 					</ul>
 				</div>
@@ -802,7 +875,86 @@
 	
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script>
+		// ---------Responsive-navbar-active-animation-----------
+function test(){
+	var tabsNewAnim = $('#navbarSupportedContent');
+	var selectorNewAnim = $('#navbarSupportedContent').find('li').length;
+	var activeItemNewAnim = tabsNewAnim.find('.active');
+	var activeWidthNewAnimHeight = activeItemNewAnim.innerHeight();
+	var activeWidthNewAnimWidth = activeItemNewAnim.innerWidth();
+	var itemPosNewAnimTop = activeItemNewAnim.position();
+	var itemPosNewAnimLeft = activeItemNewAnim.position();
+	$(".hori-selector").css({
+		"top":itemPosNewAnimTop.top + "px", 
+		"left":itemPosNewAnimLeft.left + "px",
+		"height": activeWidthNewAnimHeight + "px",
+		"width": activeWidthNewAnimWidth + "px"
+	});
+	$("#navbarSupportedContent").on("click","li",function(e){
+		$('#navbarSupportedContent ul li').removeClass("active");
+		$(this).addClass('active');
+		var activeWidthNewAnimHeight = $(this).innerHeight();
+		var activeWidthNewAnimWidth = $(this).innerWidth();
+		var itemPosNewAnimTop = $(this).position();
+		var itemPosNewAnimLeft = $(this).position();
+		$(".hori-selector").css({
+			"top":itemPosNewAnimTop.top + "px", 
+			"left":itemPosNewAnimLeft.left + "px",
+			"height": activeWidthNewAnimHeight + "px",
+			"width": activeWidthNewAnimWidth + "px"
+		});
+	});
+}
+$(document).ready(function(){
+	setTimeout(function(){ test(); });
+});
+$(window).on('resize', function(){
+	setTimeout(function(){ test(); }, 500);
+});
+$(".navbar-toggler").click(function(){
+	$(".navbar-collapse").slideToggle(300);
+	setTimeout(function(){ test(); });
+});
 
+
+
+// --------------add active class-on another-page move----------
+jQuery(document).ready(function($){
+	// Get current path and find target link
+	var path = window.location.pathname.split("/").pop();
+
+	// Account for home page with empty path
+	if ( path == '' ) {
+		path = 'index.html';
+	}
+
+	var target = $('#navbarSupportedContent ul li a[href="'+path+'"]');
+	// Add active class to target link
+	target.parent().addClass('active');
+});
+
+
+
+
+// Add active class on another page linked
+// ==========================================
+// $(window).on('load',function () {
+//     var current = location.pathname;
+//     console.log(current);
+//     $('#navbarSupportedContent ul li a').each(function(){
+//         var $this = $(this);
+//         // if the current path is like this link, make it active
+//         if($this.attr('href').indexOf(current) !== -1){
+//             $this.parent().addClass('active');
+//             $this.parents('.menu-submenu').addClass('show-dropdown');
+//             $this.parents('.menu-submenu').parent().addClass('active');
+//         }else{
+//             $this.parent().removeClass('active');
+//         }
+//     })
+// });
+	</script>
 	</body>
 </html>
 
