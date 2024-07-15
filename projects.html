@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub READMEs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .readme {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .markdown-body {
+            margin-bottom: 10px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <h1 id="project-title">My GitHub READMEs</h1> -->
+        <div id="readmes">
+            <div id="readme-1" class="readme">
+                <!-- <h2>Repository 1</h2> -->
+                <div class="markdown-body" data-markdown="# Rag with Django
+
+                ## Description
+                This project is a Django web application that provides various functionalities such as user authentication, chat functionality, and more. The project is structured into different apps for better modularity and separation of concerns.
+                
+                ## Table of Contents
+                - [Installation](#installation)
+                - [Usage](#usage)
+                - [Project Structure](#project-structure)
+                - [Features](#features)
+                - [Contributing](#contributing)
+                - [License](#license)
+                - [Contact](#contact)
+                
+                ## Installation
+                
+                ### Prerequisites
+                - Python 3.x
+                - Django 3.x
+                - Pip (Python package installer)
+                
+                ### Steps
+                1. **Clone the repository**:
+                ```bash
+                git clone https://github.com/yourusername/Rag_with_django.git
+                cd Rag_with_django
+                ```
+                   
+                2. **Create and activate a virtual environment**:
+                ```bash
+                python -m venv venv
+                source venv/bin/activate  # On Windows use `venv\Scripts\activate` 
+                ```
+                
+                3. **Install the dependencies**:
+                ```bash
+                pip install -r requirements.txt
+                ```
+                
+                4. **Apply the migrations**:
+                ```bash
+                Run the development server
+                ```
+                5. **Run the development server**:
+                ```bash
+                python manage.py runserver
+                ```
+                ### Usage
+                To use the application, navigate to http://127.0.0.1:8000/ in your web browser after starting the development server. Here are some key functionalities:
+                - **User Authentication**: Register, login, and manage user profiles.
+                - **Chatbot Interface**: Interact with the chatbot on the /chatbot/ page.
+                - **Admin Interface**: Accessible at /admin/ for managing the site.
+                
+                ### Features
+                - **User Authentication**: Registration, login, and profile management.
+                - **Chatbot**: Simple chatbot interface.
+                - **Admin Panel**: Manage the application data through the Django admin interface.
+                
+                
+                ### Contact
+                
+                1. **Replace Placeholder Text**: Replace `Ali Kasiri`, `akgh1382@gmail.com`, and any other placeholder text with your actual information.
+                2. **Add More Details**: Expand on the project description and features if needed.
+                3. **Add Screenshots**: If you have screenshots of the application, include them in the `Usage` section for better visualization.
+                
+                This README template provides a comprehensive overview of your project and helps users and contributors understand and navigate your codebase. &#8203;:citation[oaicite:0]{index=0}&#8203;
+                
+                ">
+                </div>
+            </div>
+            <div id="readme-2" class="readme">
+                <!-- <h2>Repository 2</h2> -->
+                <div class="markdown-body"data-markdown="# Leaf Classification and Clustering Project
+                #
+                ## Overview
+                
+                This project is developed as a part of the Machine Learning Fundamentals course at the University of Isfahan. The main objective is to build a classification and clustering model for leaf images.
+                
+                ## Author
+                - **Name:** Ali Kasiri
+                
+                ## Contents
+                
+                - [Initial Processing](#initial-processing)
+                  - [Background Removal and Conversion](#background-removal-and-conversion)
+                - [Feature Extraction](#feature-extraction)
+                  - [Distance Features](#distance-features)
+                  - [Leaf Dimensions Features](#leaf-dimensions-features)
+                  - [Leaf Color Features](#leaf-color-features)
+                  - [HOG Features](#hog-features)
+                  - [Feature Extraction with RESNET-50](#feature-extraction-with-resnet-50)
+                - [Leaf Classification](#leaf-classification)
+                  - [Data Preprocessing](#data-preprocessing)
+                  - [Model Selection](#model-selection)
+                  - [Model Training](#model-training)
+                  - [Model Evaluation](#model-evaluation)
+                - [Leaf Clustering](#leaf-clustering)
+                  - [Feature Selection and Normalization](#feature-selection-and-normalization)
+                  - [Dimensionality Reduction](#dimensionality-reduction)
+                  - [Model Evaluation Metrics](#model-evaluation-metrics)
+                  - [Clustering Model Selection](#clustering-model-selection)
+                - [References](#references)
+                
+                ## Initial Processing
+                
+                ### Background Removal and Conversion
+                
+                Initially, the leaf images had various backgrounds which interfered with image processing. The background was removed using the `rembg` library and converted to a uniform white background.
+    
+                ## Feature Extraction
+                
+                Feature extraction is performed using the `feature_extraction.py` script, which includes a class `Images_class` for processing images using `cv2`.
+                
+                ### Distance Features
+                
+                The Euclidean distance from the centroid of the leaf to its contour points is calculated and normalized. This helps in identifying leaves with different shapes and petal counts.
+                
+                ### Leaf Dimensions Features
+                
+                - **Length to Width Ratio:** Calculated using the bounding rectangle around the leaf.
+                - **Leaf to Background Ratio:** The ratio of the leaf area to its bounding rectangle area.
+                - **Form Factor:** Measures how similar the shape is to a perfect circle.
+                - **Convexity:** Ratio of the perimeter of the shape to its convex hull.
+                - **Perimeter:** Length of the contour defining the leaf.
+                
+                ### Leaf Color Features
+                
+                Mean color values for red, green, and blue channels are calculated and stored.
+                
+                ### HOG Features
+                
+                Histogram of Oriented Gradients (HOG) features are extracted using the `hog` function from `skimage.feature`.
+                
+                ### Feature Extraction with RESNET-50
+                
+                Features are extracted from images using a pre-trained ResNet-50 model.
+                
+                ## Leaf Classification
+                
+                ### Data Preprocessing
+                
+                The dataset is split into training and testing sets, and features are scaled.
+                
+                ### Model Selection
+                
+                Various classifiers are tested, including Logistic Regression, Random Forest, etc. Logistic Regression performed the best.
+                
+                ### Model Training
+                
+                Logistic Regression is selected for final training.
+                
+                ### Model Evaluation
+                
+                The model is evaluated using a 25-fold cross-validation, achieving an average accuracy of 93.29%.
+                
+                ## Leaf Clustering
+                
+                ### Feature Selection and Normalization
+                
+                All relevant features are selected and normalized for clustering.
+                
+                ### Dimensionality Reduction
+                
+                T-SNE is used for dimensionality reduction to two dimensions.
+                
+                ### Model Evaluation Metrics
+                
+                Silhouette score and Dunn index are used to evaluate the clustering models.
+                
+                ### Clustering Model Selection
+                
+                Models like K-Means, Spectral Clustering, and Agglomerative Clustering are tested, and the best model is selected based on evaluation metrics.
+                
+                ## References
+                
+                - `rembg` library
+                - `cv2` library
+                - `scipy.signal` for Savitzky-Golay filter
+                - `skimage.feature` for HOG features
+                - Pre-trained ResNet-50 model from `tensorflow.keras.applications`
+                "
+  >
+                </div>
+            </div>
+            <!-- Add more README sections here as needed -->
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.0.12/marked.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to parse URL and get the project id
+            function getProjectId() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('project');
+            }
+
+            // Function to display the correct README based on the project id
+            function displayReadme() {
+                const projectId = getProjectId();
+                const allReadmes = document.querySelectorAll('.readme');
+                allReadmes.forEach(readme => readme.classList.remove('active'));
+                
+                if (projectId) {
+                    const activeReadme = document.getElementById(`readme-${projectId}`);
+                    if (activeReadme) {
+                        activeReadme.classList.add('active');
+                        // Render Markdown content
+                        const markdownBody = activeReadme.querySelector('.markdown-body');
+                        const markdownContent = markdownBody.getAttribute('data-markdown');
+                        const lines = markdownContent.trim().split('\n');
+                        let htmlContent = '';
+                        lines.forEach(line => {
+                            htmlContent += `<div class="markdown-body">${marked.parse(line.trim())}</div>\n`;
+                        });
+                        markdownBody.innerHTML = htmlContent;
+                    } else {
+                        // Handle invalid project id
+                        document.getElementById('project-title').textContent = 'README Not Found';
+                    }
+                } else {
+                    // Handle no project id
+                    document.getElementById('project-title').textContent = 'Select a README';
+                }
+            }
+
+            displayReadme();
+        });
+        
+
+        
+    </script>
+</body>
+</html>
+
+
+
+
