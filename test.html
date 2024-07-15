@@ -53,7 +53,7 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-    <style>
+    <!-- <style>
 		
 		.navbar-default {
 			border-color: transparent;
@@ -85,9 +85,10 @@
     outline: 0;
     color: #00ADB5;
 }
-	</style>
+	</style> -->
 	</head>
 	<body class="boxed">
+
 	<!-- Loader -->
 	<!-- <div class="fh5co-loader"></div> -->
     <nav class="navbar navbar-default navbar-fixed-top navbar-shrink" style="border: none; transition: top 0.9s;">
@@ -135,7 +136,7 @@
 	<div id="fh5co-page">
 
 		<!-- Header -->
-		
+ 
 		<div id="fh5co-intro" class="fh5co-section" style="margin-top: 100px;">
 			<div class="container">
 				<!-- <div class="row row-bottom-padded-sm">
@@ -148,8 +149,10 @@
 				 <div class="col-md-8" id="fh5co-content">
                     <div id="readmes">
                         <div id="readme-1" class="readme">
+
                             <!-- <h2>Repository 1</h2> -->
-                            <div class="markdown-body" data-markdown="# Rag with Django
+
+                            <!-- <div class="markdown-body" data-markdown="# Rag with Django
             
                             ## Description
                             This project is a Django web application that provides various functionalities such as user authentication, chat functionality, and more. The project is structured into different apps for better modularity and separation of concerns.
@@ -172,9 +175,10 @@
                             
                             ### Steps
                             1. **Clone the repository**:
-                            ```bash
-                            git clone https://github.com/yourusername/Rag_with_django.git
-                            cd Rag_with_django
+
+                            ```bash 
+                            git clone https://github.com/yourusername/Rag_with_django.git 
+                            cd Rag_with_django 
                             ```
                                
                             2. **Create and activate a virtual environment**:
@@ -217,11 +221,11 @@
                             This README template provides a comprehensive overview of your project and helps users and contributors understand and navigate your codebase. &#8203;:citation[oaicite:0]{index=0}&#8203;
                             
                             ">
-                            </div>
+                            </div> -->
                         </div>
                         <div id="readme-2" class="readme">
-                            <!-- <h2>Repository 2</h2> -->
-                            <div class="markdown-body"data-markdown="# Leaf Classification and Clustering Project
+                            <h2>Repository 2</h2>
+                             <!-- <div class="markdown-body"data-markdown="# Leaf Classification and Clustering Project
                             #
                             ## Overview
                             
@@ -331,7 +335,7 @@
                             - Pre-trained ResNet-50 model from `tensorflow.keras.applications`
                             "
               >
-                            </div>
+                            </div>  -->
                         </div>
                         <!-- Add more README sections here as needed -->
                     </div>
@@ -355,6 +359,7 @@
 
 			</div>
 		</div>
+
 
 		<footer id="fh5co-footer" role="contentinfo">
 			<div class="container">
@@ -424,7 +429,6 @@
             function getProjectId() {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get('project');
-
             }
 
             // Function to display the correct README based on the project id
@@ -458,6 +462,7 @@
 
             displayReadme();
         });
+        
         
         let prevScrollpos = window.pageYOffset;  
         window.onscroll = function() {  
