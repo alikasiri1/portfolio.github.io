@@ -283,6 +283,181 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
 
                             <!-- <div class="markdown-body"data-markdown=""</div>  -->
                         </div>
+
+                        <div id="readme-3" class="readme">
+                            <h1 id="documentation-meanshiftsegmentation-class">Documentation: MeanShiftSegmentation Class</h1>
+                            <p>The <strong>MeanShiftSegmentation</strong> class implements a custom Mean Shift algorithm for image segmentation. It processes an input image by grouping pixels into clusters based on their spatial and color similarities, resulting in a segmented image. Below is the detailed documentation for each part of the implementation.</p>
+                            <h2 id="results">Results</h2>
+                            <p><img style="width: -webkit-fill-available;" src="https://github.com/alikasiri1/Mean_shift_segmentation/blob/main/segmented_image_3.png?raw=true" alt="Alt text"> 
+                            <img style="width: -webkit-fill-available;" src="https://github.com/alikasiri1/Mean_shift_segmentation/blob/main/segmented_image_1.png?raw=true" alt="Alt text"> 
+                            <img style="width: -webkit-fill-available;" src="https://github.com/alikasiri1/Mean_shift_segmentation/blob/main/segmented_image_2.png?raw=true" alt="Alt text"> </p>
+                            <hr>
+                            <h2 id="class-initialization">Class Initialization</h2>
+                            <pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MeanShiftSegmentation</span>:</span>
+                                <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, spatial_radius, range_radius, max_iterations=<span class="hljs-number">100</span>, use_gaussian_weights=True, handle_outliers=True)</span></span><span class="hljs-symbol">:</span>
+                            </code></pre>
+                            <h3 id="parameters-">Parameters:</h3>
+                            <ul>
+                            <li><p><strong><code>spatial_radius</code></strong> (<em>float</em>):</p>
+                            <ul>
+                            <li>The radius in the spatial domain (x, y coordinates) used to define the neighborhood of pixels during clustering.</li>
+                            </ul>
+                            </li>
+                            <li><p><strong><code>range_radius</code></strong> (<em>float</em>):</p>
+                            <ul>
+                            <li>The radius in the range domain (color similarity in RGB) for clustering.</li>
+                            </ul>
+                            </li>
+                            <li><p><strong><code>max_iterations</code></strong> (<em>int</em>):</p>
+                            <ul>
+                            <li>Maximum number of iterations for the Mean Shift algorithm.</li>
+                            </ul>
+                            </li>
+                            <li><p><strong><code>use_gaussian_weights</code></strong> (<em>bool</em>):</p>
+                            <ul>
+                            <li>Specifies whether to apply Gaussian weights to the neighbors during clustering.</li>
+                            </ul>
+                            </li>
+                            <li><p><strong><code>handle_outliers</code></strong> (<em>bool</em>):</p>
+                            <ul>
+                            <li>Indicates whether to handle and correct outliers in the segmented image.</li>
+                            </ul>
+                            </li>
+                            </ul>
+                            <hr>
+                            <h2 id="preprocessing-functions">Preprocessing Functions</h2>
+                            <h3 id="1-preprocessing-the-image-">1. <strong>Preprocessing the Image</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">preprocess_image</span><span class="hljs-params">(<span class="hljs-keyword">self</span>)</span></span>:
+                                image = cv2.GaussianBlur(<span class="hljs-keyword">self</span>.input_image, (<span class="hljs-number">5</span>, <span class="hljs-number">5</span>), <span class="hljs-number">0</span>)
+                                <span class="hljs-keyword">return</span> image
+                            </code></pre>
+                            <ul>
+                            <li>Applies Gaussian Blur to the input image to reduce noise.</li>
+                            </ul>
+                            <h3 id="2-reading-the-image-">2. <strong>Reading the Image</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read_image</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, image_path)</span></span>:
+                                <span class="hljs-keyword">self</span>.input_image = cv2.cvtColor(cv2.imread(image_path), cv2.COLOR_BGR2RGB)
+                            </code></pre>
+                            <ul>
+                            <li>Reads an image from the specified path and converts it from BGR to RGB format.</li>
+                            </ul>
+                            <hr>
+                            <h2 id="segmentation-process">Segmentation Process</h2>
+                            <h3 id="core-function-segment-">Core Function: <strong>segment</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">segment</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, image)</span></span><span class="hljs-symbol">:</span>
+                            </code></pre>
+                            <p>Processes the image using the Mean Shift algorithm. Below are the steps:</p>
+                            <h3 id="1-converting-the-image-to-a-5d-array-">1. <strong>Converting the Image to a 5D Array</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-built_in">height</span>, <span class="hljs-built_in">width</span>, channels = <span class="hljs-built_in">image</span>.shape
+                            flat_image = <span class="hljs-built_in">np</span>.zeros((<span class="hljs-built_in">height</span> * <span class="hljs-built_in">width</span>, <span class="hljs-number">5</span>), dtype=<span class="hljs-built_in">np</span>.float32)
+
+                            <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">height</span>):
+                                <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">width</span>):
+                                    flat_image[y * <span class="hljs-built_in">width</span> + x] = <span class="hljs-built_in">np</span>.<span class="hljs-built_in">array</span>([x, y, *<span class="hljs-built_in">image</span>[y, x]])
+                            </code></pre>
+                            <ul>
+                            <li>Converts the image into a 5D array, where each pixel is represented as <code>[x, y, R, G, B]</code>.</li>
+                            <li><strong>Purpose</strong>: This format allows simultaneous processing of spatial and color data.</li>
+                            </ul>
+                            <h3 id="2-building-the-kd-tree-">2. <strong>Building the KD-Tree</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-attr">kd_tree</span> = KDTree(flat_image[:, :<span class="hljs-number">2</span>])
+                            </code></pre>
+                            <ul>
+                            <li>A KD-Tree is built using the spatial coordinates (<code>x, y</code>) of the pixels.</li>
+                            <li><strong>Purpose</strong>: This structure enables efficient querying of neighboring pixels within the spatial radius.</li>
+                            </ul>
+                            <h3 id="3-querying-neighbors-">3. <strong>Querying Neighbors</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-attr">spatial_neighbors</span> = kd_tree.query_ball_point(point[:<span class="hljs-number">2</span>], self.spatial_radius)
+                            <span class="hljs-attr">distances</span> = np.linalg.norm(flat_image[spatial_neighbors, :<span class="hljs-number">2</span>] - point[:<span class="hljs-number">2</span>], axis=<span class="hljs-number">1</span>)
+                            <span class="hljs-attr">color_distances</span> = np.linalg.norm(flat_image[spatial_neighbors, <span class="hljs-number">2</span>:] - point[<span class="hljs-number">2</span>:], axis=<span class="hljs-number">1</span>)
+
+                            <span class="hljs-attr">mask</span> = (distances &lt; self.spatial_radius) &amp; (color_distances &lt; self.range_radius)
+                            <span class="hljs-attr">neighbors</span> = np.array(spatial_neighbors)[mask]
+                            </code></pre>
+                            <ul>
+                            <li>Queries the neighbors of a pixel within the spatial radius.</li>
+                            <li><strong>Purpose</strong>: Filters neighbors based on both spatial distance (<code>x, y</code>) and color similarity (<code>R, G, B</code>).</li>
+                            </ul>
+                            <h3 id="4-applying-gaussian-weights-optional-">4. <strong>Applying Gaussian Weights (Optional)</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-keyword">if</span> self.use_gaussian_weights:
+                                spatial_weights = <span class="hljs-built_in">np</span>.<span class="hljs-built_in">exp</span>(-(distances[mask]**<span class="hljs-number">2</span>) / (<span class="hljs-number">2</span> * (self.spatial_radius**<span class="hljs-number">2</span>)))
+                                range_weights = <span class="hljs-built_in">np</span>.<span class="hljs-built_in">exp</span>(-(color_distances[mask]**<span class="hljs-number">2</span>) / (<span class="hljs-number">2</span> * (self.range_radius**<span class="hljs-number">2</span>)))
+                                weights = spatial_weights * range_weights
+
+                                weighted_sum = <span class="hljs-built_in">np</span>.<span class="hljs-built_in">sum</span>(flat_image[<span class="hljs-built_in">neighbors</span>] * weights[:, <span class="hljs-built_in">np</span>.newaxis], axis=<span class="hljs-number">0</span>)
+                                flat_image[i] = weighted_sum / <span class="hljs-built_in">np</span>.<span class="hljs-built_in">sum</span>(weights)
+                            </code></pre>
+                            <ul>
+                            <li>Gaussian weights are calculated for neighbors based on their spatial and color distances.</li>
+                            <li><strong>Purpose</strong>: Assigns higher weights to closer and more similar neighbors, ensuring smoother clustering.</li>
+                            </ul>
+                            <h3 id="5-handling-outliers-optional-">5. <strong>Handling Outliers (Optional)</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-keyword">if</span> self.handle_outliers:
+                                mean_colors = <span class="hljs-built_in">np</span>.<span class="hljs-built_in">mean</span>(flat_image[:, <span class="hljs-number">2</span>:], axis=<span class="hljs-number">0</span>)
+                                std_colors = <span class="hljs-built_in">np</span>.<span class="hljs-built_in">std</span>(flat_image[:, <span class="hljs-number">2</span>:], axis=<span class="hljs-number">0</span>)
+                                threshold = <span class="hljs-number">3</span> * std_colors
+
+                                <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(flat_image.shape[<span class="hljs-number">0</span>]):
+                                    color_distance = <span class="hljs-built_in">np</span>.<span class="hljs-built_in">abs</span>(flat_image[i, <span class="hljs-number">2</span>:] - mean_colors)
+                                    <span class="hljs-keyword">if</span> <span class="hljs-built_in">np</span>.any(color_distance &gt; threshold):
+                                        flat_image[i, <span class="hljs-number">2</span>:] = mean_colors
+                            </code></pre>
+                            <ul>
+                            <li>Identifies outliers as pixels whose color values deviate by more than 3 standard deviations from the mean color.</li>
+                            <li><strong>Purpose</strong>: Corrects outliers by replacing them with the mean color to ensure consistency.</li>
+                            </ul>
+                            <h3 id="6-reshaping-to-original-image-shape-">6. <strong>Reshaping to Original Image Shape</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-title">segmented_image</span> = flat_image[:, <span class="hljs-number">2</span>:].reshape((height, width, channels)).<span class="hljs-keyword">as</span><span class="hljs-keyword">type</span>(np.uint8)
+                            <span class="hljs-title">return</span> segmented_image
+                            </code></pre>
+                            <ul>
+                            <li>Converts the processed 5D array back into a 3D RGB image.</li>
+                            <li><strong>Purpose</strong>: Produces the final segmented image.</li>
+                            </ul>
+                            <hr>
+                            <h2 id="visualization-and-output">Visualization and Output</h2>
+                            <h3 id="1-displaying-results-">1. <strong>Displaying Results</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">display_results</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, original_image, segmented_image, process=<span class="hljs-string">'Segmented Image'</span>)</span></span><span class="hljs-symbol">:</span>
+                            </code></pre>
+                            <ul>
+                            <li>Displays the original and segmented images side by side using Matplotlib.</li>
+                            <li><strong>Purpose</strong>: Visual comparison of the original and processed images.</li>
+                            </ul>
+                            <h3 id="2-saving-the-segmented-image-">2. <strong>Saving the Segmented Image</strong></h3>
+                            <pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">save_image</span><span class="hljs-params">(<span class="hljs-keyword">self</span>, image, output_path)</span></span>:
+                                cv2.imwrite(output_path, cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
+                            </code></pre>
+                            <ul>
+                            <li>Saves the segmented image to the specified path in BGR format.</li>
+                            </ul>
+                            <hr>
+                            <h2 id="example-usage">Example Usage</h2>
+                            <pre><code class="lang-python"><span class="hljs-comment"># Initialize the MeanShiftSegmentation class</span>
+                            <span class="hljs-attr">mean_shift</span> = MeanShiftSegmentation(<span class="hljs-attr">spatial_radius=20,</span> <span class="hljs-attr">range_radius=30,</span> <span class="hljs-attr">max_iterations=50)</span>
+
+                            <span class="hljs-comment"># Read and preprocess the image</span>
+                            mean_shift.read_image('input.jpg')
+                            <span class="hljs-attr">image</span> = mean_shift.preprocess_image()
+
+                            <span class="hljs-comment"># Perform segmentation</span>
+                            <span class="hljs-attr">segmented_image</span> = mean_shift.segment(image)
+
+                            <span class="hljs-comment"># Display the results</span>
+                            mean_shift.display_results(mean_shift.input_image, segmented_image)
+
+                            <span class="hljs-comment"># Save the segmented image</span>
+                            mean_shift.save_image(segmented_image, 'output.jpg')
+                            </code></pre>
+                            <h2 id="summary">Summary</h2>
+                            <p>The <strong>MeanShiftSegmentation</strong> class provides a robust implementation of the Mean Shift algorithm, allowing for customizable spatial and color clustering. Key features include:</p>
+                            <ul>
+                            <li>Gaussian weighting for smoother segmentation.</li>
+                            <li>Outlier handling for consistent results.</li>
+                            <li>Efficient neighbor querying using a KD-Tree.</li>
+                            </ul>
+                            <p>This implementation is ideal for tasks requiring image segmentation or color clustering.</p>
+
+                        </div>
                         <!-- Add more README sections here as needed -->
                     </div>
                 </div>
@@ -303,6 +478,17 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`
                                 <div id="project-2" class="project">
                                     <img src="images/portfolio-1.jpg" class="img-responsive img-bordered" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                                     <h3>project-2</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ullam unde, totam harum laboriosam dolores.</p>
+                                    <ul class="ul_style_1">
+                                        <li>Lorem ipsum dolor sit amet</li>
+                                        <li>Consectetur adipisicing elit</li>
+                                        <li>Recusandae laboriosam eligendi maiores</li>
+                                        <li>Sapiente repudiandae perspiciatis</li>
+                                    </ul>
+                                </div>
+                                <div id="project-3" class="project">
+                                    <img src="images/portfolio-1.jpg" class="img-responsive img-bordered" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                                    <h3>project-3</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ullam unde, totam harum laboriosam dolores.</p>
                                     <ul class="ul_style_1">
                                         <li>Lorem ipsum dolor sit amet</li>
