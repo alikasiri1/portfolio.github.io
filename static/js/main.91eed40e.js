@@ -14001,7 +14001,7 @@
                     className: "columns contact-details"
                 }, l.a.createElement("h2", null, "Contact Details"), l.a.createElement("p", {
                     className: "address"
-                }, l.a.createElement("span", null, e), l.a.createElement("br", null), l.a.createElement("span", null, r, l.a.createElement("br", null), o, " ", i, ", ", a), l.a.createElement("br", null), l.a.createElement("span", null, u), l.a.createElement("br", null), l.a.createElement("span", null, s))), l.a.createElement("div", {
+                }, l.a.createElement("span", null, e), l.a.createElement("br", null), l.a.createElement("span", null, u), l.a.createElement("br", null), l.a.createElement("span", null, s))), l.a.createElement("div", {
                     className: "columns download"
                 }, l.a.createElement("p", null, l.a.createElement("a", {
                     href: c,
@@ -14090,12 +14090,7 @@
                         var t = "bar-expand " + e.name.toLowerCase();
                         return l.a.createElement("li", {
                             key: e.name
-                        }, l.a.createElement("span", {
-                            style: {
-                                width: e.level
-                            },
-                            className: t
-                        }), l.a.createElement("em", null, e.name))
+                        }, l.a.createElement("em", null, e.name))
                     });
                 return l.a.createElement("section", {
                     id: "resume"
@@ -14116,16 +14111,12 @@
                 }, l.a.createElement("h1", null, l.a.createElement("span", null, "Work"))), l.a.createElement("div", {
                     className: "nine columns main-col"
                 }, n)), l.a.createElement("div", {
-                    className: "row skill"
+                    className: "row work"
                 }, l.a.createElement("div", {
                     className: "three columns header-col"
-                }, l.a.createElement("h1", null, l.a.createElement("span", null, "Skills"))), l.a.createElement("div", {
+                }, l.a.createElement("h1", null, l.a.createElement("span", null, "skill"))), l.a.createElement("div", {
                     className: "nine columns main-col"
-                }, l.a.createElement("p", null, e), l.a.createElement("div", {
-                    className: "bars"
-                }, l.a.createElement("ul", {
-                    className: "skills"
-                }, r)))))
+                }, r))) 
             }
         }]),
         t

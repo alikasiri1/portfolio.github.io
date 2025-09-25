@@ -9,10 +9,10 @@
     "email": "alikasirii2003@gmail.com",
     "phone": "0991-448-3136",
     "address": {
-      "street": "123 Main Street",
-      "city": "City",
-      "state": "State",
-      "zip": "12345"
+      "street": "",
+      "city": "",
+      "state": "",
+      "zip": ""
     },
     "website": "http://www.yourwebsite.com",
     "resumedownload": "https://alikasiri1.github.io/portfolio.github.io/Ali Kasiri Resume.pdf",
@@ -49,12 +49,11 @@
     ],
     "skills": [
       {
-        "name": "JavaScript", 
-        "level": "80%"
+        "name": "C, C++"
       },
       {
-        "name": "Python",
-        "level": "90%"
+        "name": "Python"
+        
       }
     ]
   },
