@@ -13820,24 +13820,7 @@
                     className: "banner-text"
                 }, l.a.createElement("h1", {
                     className: "responsive-headline"
-                }, "I'm Ali Kasiri", e, ". "), l.a.createElement("h3", null, "I'm an ", l.a.createElement("span", null, t), " ", n, "."), l.a.createElement("hr", null), l.a.createElement("ul",
-  { className: "social" },
-  l.a.createElement("li", null,
-    l.a.createElement("a", { href: "https://www.linkedin.com/in/ali-kasiri-b451a3249" },
-      l.a.createElement("i", { className: "fa fa-linkedin" })
-    )
-  ),
-  l.a.createElement("li", null,
-    l.a.createElement("a", { href: "https://github.com/alikasiri1" },
-      l.a.createElement("i", { className: "fa fa-github" })
-    )
-  ),
-  l.a.createElement("li", null,
-    l.a.createElement("a", { href: "https://join.skype.com/invite/DxqDeil9x6Cz" },
-      l.a.createElement("i", { className: "fa fa-skype" })
-    )
-  )
-))), l.a.createElement("p", {
+                }, "I'm ", e, ". "), l.a.createElement("h3", null, "I'm an ", l.a.createElement("span", null, t), " ", n, "."), l.a.createElement("hr", null), l.a.createElement("ul", { className: "social" }, r))), l.a.createElement("p", {
                     className: "scrolldown"
                 }, l.a.createElement("a", {
                     className: "smoothscroll",
@@ -13920,7 +13903,7 @@
                     className: "social-links"
                 }, e), l.a.createElement("ul", {
                     className: "copyright"
-                }, l.a.createElement("li", null, "\xa9 Copyright 2020 John Quinto"), l.a.createElement("li", null, "Design by ", l.a.createElement("a", {
+                }, l.a.createElement("li", null, "\xa9 Copyright 2025 Ali Kasiri"), l.a.createElement("li", null, "Design by ", l.a.createElement("a", {
                     title: "Styleshout",
                     href: "http://www.styleshout.com/"
                 }, "Styleshout")))), l.a.createElement("div", {
@@ -14012,7 +13995,7 @@
                     alt: "Tim Baker Profile Pic"
                 })), l.a.createElement("div", {
                     className: "nine columns main-col"
-                }, l.a.createElement("h2", null, "About Me"), l.a.createElement("p", null,"test about me", n), l.a.createElement("div", {
+                }, l.a.createElement("h2", null, "About Me"), l.a.createElement("p", null, n), l.a.createElement("div", {
                     className: "row"
                 }, l.a.createElement("div", {
                     className: "columns contact-details"
@@ -14221,7 +14204,7 @@
                     className: "lead"
                 }, e), l.a.createElement("div", {
                     className: "widget widget_contact"
-                }, l.a.createElement("p", null, " For business inquiries, contact me at ", l.a.createElement("strong", null, "jquinto64@gmail.com "), "  or ", l.a.createElement("strong", null, "289-654-4930 "), " ")))))
+                }, l.a.createElement("p", null, " For business inquiries, contact me at ", l.a.createElement("strong", null, "alikasirii2003@gmail.com "), "  or ", l.a.createElement("strong", null, "991-448-3136 "), " ")))))
             }
         }]),
         t

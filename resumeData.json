@@ -1,13 +1,13 @@
 {
   "main": {
-    "name": "John Quinto",
-    "occupation": "Software Developer",
-    "description": "Some intro text here.",
+    "name": "Ali Kasiri",
+    "occupation": "Computer Engineering Student",
+    "description": "specializing in AI, computer networks, and Deep Learning, with focus on NLP and Reinforcement Learning. Passionate about developing intelligent algorithms and language-based models",
     "image": "profilepic.jpg",
-    "bio": "This is a sample biography text for the portfolio.",
+    "bio": "Final-year Computer Engineering student with strong foundations in Artificial Intelligence, Machine Learning, and Deep Learning, with expertise spanning Natural Language Processing, Reinforcement Learning, Computer Vision, and intelligent security analytics. Experienced in applying AI techniques to diverse domains, including language-based models, image analysis, IoT, and large-scale computing environments, with a growing interest in cybersecurity and autonomous systems. Passionate about developing innovative algorithms and practical solutions at the intersection of AI, advanced computing, and emerging technologies.",
     "contactmessage": "Here is where you write your message to clients.",
-    "email": "john@example.com",
-    "phone": "123-456-7890",
+    "email": "alikasirii2003@gmail.com",
+    "phone": "0991-448-3136",
     "address": {
       "street": "123 Main Street",
       "city": "City",
@@ -15,32 +15,28 @@
       "zip": "12345"
     },
     "website": "http://www.yourwebsite.com",
-    "resumedownload": "http://www.yourwebsite.com/resume.pdf",
+    "resumedownload": "https://alikasiri1.github.io/portfolio.github.io/Ali Kasiri Resume.pdf",
     "social": [
       {
         "name": "linkedin",
-        "url": "https://www.linkedin.com/in/john-quinto/",
+        "url": "https://www.linkedin.com/in/ali-kasiri-b451a3249",
         "className": "fa fa-linkedin"
       },
       {
         "name": "github",
-        "url": "https://github.com/Jquinto64",
+        "url": "https://github.com/alikasiri1",
         "className": "fa fa-github"
-      },
-      {
-        "name": "skype",
-        "url": "https://join.skype.com/invite/DxqDeil9x6Cz",
-        "className": "fa fa-skype"
       }
+      
     ]
   },
   "resume": {
     "education": [
       {
-        "school": "University Name",
+        "school": "University of Isfahan, Isfahan, Iran ",
         "degree": "B.Sc. in Computer Engineering",
-        "graduated": "2025",
-        "description": "Some description."
+        "graduated": "Sep 2021 – Feb 2026",
+        "description": "(GPA: 4 / 4)"
       }
     ],
     "work": [
@@ -53,7 +49,7 @@
     ],
     "skills": [
       {
-        "name": "JavaScript",
+        "name": "JavaScript", 
         "level": "80%"
       },
       {
