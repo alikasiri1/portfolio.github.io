@@ -1,0 +1,89 @@
+{
+  "main": {
+    "name": "John Quinto",
+    "occupation": "Software Developer",
+    "description": "Some intro text here.",
+    "image": "profilepic.jpg",
+    "bio": "This is a sample biography text for the portfolio.",
+    "contactmessage": "Here is where you write your message to clients.",
+    "email": "john@example.com",
+    "phone": "123-456-7890",
+    "address": {
+      "street": "123 Main Street",
+      "city": "City",
+      "state": "State",
+      "zip": "12345"
+    },
+    "website": "http://www.yourwebsite.com",
+    "resumedownload": "http://www.yourwebsite.com/resume.pdf",
+    "social": [
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/john-quinto/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/Jquinto64",
+        "className": "fa fa-github"
+      },
+      {
+        "name": "skype",
+        "url": "https://join.skype.com/invite/DxqDeil9x6Cz",
+        "className": "fa fa-skype"
+      }
+    ]
+  },
+  "resume": {
+    "education": [
+      {
+        "school": "University Name",
+        "degree": "B.Sc. in Computer Engineering",
+        "graduated": "2025",
+        "description": "Some description."
+      }
+    ],
+    "work": [
+      {
+        "company": "Company Name",
+        "title": "Job Title",
+        "years": "2023 - Present",
+        "description": "Job description here."
+      }
+    ],
+    "skills": [
+      {
+        "name": "JavaScript",
+        "level": "80%"
+      },
+      {
+        "name": "Python",
+        "level": "90%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "Project One",
+        "category": "Web Development",
+        "image": "project1.jpg",
+        "url": "http://projectlink.com"
+      },
+      {
+        "title": "Project Two",
+        "category": "Machine Learning",
+        "image": "project2.jpg",
+        "url": "http://projectlink.com"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "This is a testimonial text.",
+        "user": "Client Name"
+      }
+    ]
+  }
+}
