@@ -14090,7 +14090,7 @@
                         var t = "bar-expand " + e.name.toLowerCase();
                         return l.a.createElement("li", {
                             key: e.name
-                        }, l.a.createElement("em", null, e.name))
+                        }, l.a.createElement("em", null, e.name)) 
                     });
                 return l.a.createElement("section", {
                     id: "resume"
