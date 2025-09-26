@@ -14087,10 +14087,9 @@
                         }, e.years)), l.a.createElement("p", null, e.description))
                     })
                       , r = this.props.data.skills.map(function(e) {
-                        var t = "bar-expand " + e.name.toLowerCase();
                         return l.a.createElement("li", {
-                            key: e.name
-                        }, l.a.createElement("em", null, e.name)) 
+                            key: e.title
+                        } , l.a.createElement("h5", null, e.title) , l.a.createElement("span", null, e.name))
                     });
                 return l.a.createElement("section", {
                     id: "resume"

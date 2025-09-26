@@ -46,13 +46,23 @@
         "years": "2024 - 2025",
         "description": "Worked on Large Language Models (LLMs) and Natural Language Processing (NLP) applications. Responsible for data extraction and preprocessing to build a rec-ommendation and Q&A NER system model"
       }
+      
     ],
     "skills": [
       {
-        "name": "C, C++"
+        "title": "Programming Languages",
+        "name": "C, C++, Python"
+
+
       },
       {
-        "name": "Python"
+        "title": "Programming Skills",
+        "name": "OOP, Design Patterns, Data Structures & Algorithms, Git"
+        
+      },
+      {
+        "title": "Libraries/Frameworks/Tools",
+        "name": "Scikit-learn, PyTorch, Pandas, NumPy, Django, Qt, SQL, Linux, Docker"
         
       }
     ] 
@@ -62,13 +72,13 @@
       {
         "title": "Project One",
         "category": "Web Development",
-        "image": "project1.jpg",
+        "image": "images/canadian-wanderlust.png",
         "url": "http://projectlink.com"
       },
       {
         "title": "Project Two",
         "category": "Machine Learning",
-        "image": "project2.jpg",
+        "image": "images/canadian-wanderlust.png",
         "url": "http://projectlink.com"
       }
     ]
