@@ -72,13 +72,13 @@
       {
         "title": "Project One",
         "category": "Web Development",
-        "image": "images/canadian-wanderlust.png",
+        "image": "canadian-wanderlust.png",
         "url": "http://projectlink.com"
       },
       {
-        "title": "Project Two",
+        "title": "Project Two", 
         "category": "Machine Learning",
-        "image": "images/canadian-wanderlust.png",
+        "image": "canadian-wanderlust.png",
         "url": "http://projectlink.com"
       }
     ]

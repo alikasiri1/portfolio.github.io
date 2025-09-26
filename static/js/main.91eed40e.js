@@ -14329,8 +14329,8 @@
             key: "render",
             value: function() {
                 if (this.props.data)
-                    var e = this.props.data.projects.map(function(e) {
-                        var t = "images/portfolio/" + e.image;
+                    var e = this.props.data.projects.map(function(e) { 
+                        var t = "images/" + e.image;
                         return l.a.createElement("div", {
                             key: e.title,
                             className: "columns portfolio-item"
