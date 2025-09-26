@@ -41,10 +41,10 @@
     ],
     "work": [
       {
-        "company": "Company Name",
-        "title": "Job Title",
-        "years": "2023 - Present",
-        "description": "Job description here."
+        "company": "Monil-Lan, Isfahan, Iran",
+        "title": "Data Science Intern",
+        "years": "2024 - 2025",
+        "description": "Worked on Large Language Models (LLMs) and Natural Language Processing (NLP) applications. Responsible for data extraction and preprocessing to build a rec-ommendation and Q&A NER system model"
       }
     ],
     "skills": [
