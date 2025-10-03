@@ -36,7 +36,7 @@
         "school": "University of Isfahan, Isfahan, Iran ",
         "degree": "B.Sc. in Computer Engineering",
         "graduated": "Sep 2021 – Feb 2026",
-        "description": "(GPA: 4 / 4)"
+        "description": "(GPA: 3.65 / 4)"
       }
     ],
     "work": [
@@ -70,17 +70,30 @@
   "portfolio": {
     "projects": [
       {
-        "title": "Project One",
-        "category": "Web Development",
+        "title": "Mean shift segmentation",
+        "category": "The MeanShiftSegmentation class implements a custom Mean Shift algorithm for image segmentation.",
+        "image": "segmented_image.png",
+        "url": "https://github.com/alikasiri1/Mean_shift_segmentation"
+      },
+      {
+        "title": "Aesthetic Crop Selection with RLHF", 
+        "category": "explores automatic image cropping and composition by combining a pre-trained NIMA model with reinforcement learning from human feedback (RLHF). The system uses NIMA to score candidate crops and then refines its selection policy through human-aligned reinforcement learning, aiming to produce visually appealing images without manual labeling.",
+        "image": "episode_visualization.png",
+        "url": "http://projectlink.com"
+      },
+      {
+        "title": "Blog Generator Django Rest API With RAG", 
+        "category": "Blog Generator Django Rest API With RAG",
         "image": "canadian-wanderlust.png",
         "url": "http://projectlink.com"
       },
       {
-        "title": "Project Two", 
+        "title": "Image processing using cv2", 
         "category": "Machine Learning",
         "image": "canadian-wanderlust.png",
         "url": "http://projectlink.com"
       }
+      
     ]
   },
   "testimonials": {
