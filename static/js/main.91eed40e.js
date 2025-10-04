@@ -14341,7 +14341,11 @@
                             title: e.title
                         }, l.a.createElement("img", {
                             alt: e.title,
-                            src: t
+                            src: t,
+                            style: {
+                                width: 215,     // pixels
+                                height: 150,    // pixels
+                            }
                         }), l.a.createElement("div", {
                             className: "overlay"
                         }, l.a.createElement("div", {

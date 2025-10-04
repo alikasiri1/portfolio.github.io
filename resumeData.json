@@ -79,19 +79,19 @@
         "title": "Aesthetic Crop Selection with RLHF", 
         "category": "explores automatic image cropping and composition by combining a pre-trained NIMA model with reinforcement learning from human feedback (RLHF). The system uses NIMA to score candidate crops and then refines its selection policy through human-aligned reinforcement learning, aiming to produce visually appealing images without manual labeling.",
         "image": "episode_visualization.png",
-        "url": "http://projectlink.com"
+        "url": "https://github.com/alikasiri1/Aesthetic-Crop-Selection-with-RLHF"
       },
       {
-        "title": "Blog Generator Django Rest API With RAG", 
-        "category": "Blog Generator Django Rest API With RAG",
-        "image": "canadian-wanderlust.png",
-        "url": "http://projectlink.com"
+        "title": "Retrieval-Augmented Multilingual Generation for Automated Blog and Content Publishing", 
+        "category": "An AI-driven web application that allows users to generate, edit, and publish blogs using Large Language Models (LLMs) and image generation models. With just a simple prompt, users can create fully formatted blog posts complete with text, images, and a shareable link.",
+        "image": "blog_admin.png",
+        "url": "https://github.com/alikasiri1/Blog_Generator_Django_Rest_API"
       },
       {
         "title": "Image processing using cv2", 
-        "category": "Machine Learning",
-        "image": "canadian-wanderlust.png",
-        "url": "http://projectlink.com"
+        "category": "This project is developed as a part of the Machine Learning Fundamentals course at the University of Isfahan. The main objective is to build a classification and clustering model for leaf images.",
+        "image": "leaf.png",
+        "url": "https://github.com/alikasiri1/firure_extraction_leaves_classify_and_clustering"
       }
       
     ]
